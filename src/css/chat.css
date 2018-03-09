@@ -1,0 +1,569 @@
+@keyframes chatMessageStickerSpinLeft {
+	0% {
+		transform: rotate(-10deg)
+	}
+	50% {
+		transform: rotate(10deg)
+	}
+	100% {
+		transform: rotate(-10deg)
+	}
+}
+
+@keyframes chatMessageStickerSpinRight {
+	0% {
+		transform: rotate(10deg)
+	}
+	50% {
+		transform: rotate(-10deg)
+	}
+	100% {
+		transform: rotate(10deg)
+	}
+}
+
+@keyframes blink {
+	50% {
+		opacity: 0;
+	}
+}
+
+@keyframes color_change {
+	from { background-color: #34B3C2; }
+	to   { background-color: #54D3E2; }
+}
+
+body {
+	background-color: #FFF;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+div#chatFileDragOverlay {
+	background-color: #FFF;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	transition: opacity 0.2s;
+	opacity: 0.9;
+	visibility: visible;
+}
+
+div#chatFileDragOverlay[data-visible="false"] {
+	opacity: 0;
+	visibility: hidden;
+}
+
+div#chatFileDragOverlay img {
+	width: 128px;
+	height: auto;
+	margin: 15% auto 20px auto;
+	display: block;
+}
+
+div#chatFileDragOverlay h2 {
+	margin: 20px auto;
+	text-align: center;
+	font-size: 20px;
+}
+
+div#chatFileDragOverlay p {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 16px;
+}
+
+div#chatWindow {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+div#chatTop {
+	opacity: 1;
+}
+
+img.chatTopAvatar {
+	width: 42px;
+	height: 42px;
+	position: fixed;
+	z-index: 1;
+	top: 5px;
+	left: 5px;
+	border: 2px solid rgba(255, 255, 255, 0.7);
+	box-shadow: 0px 0px 1px 1px #EEE;
+	border-radius: 36px;
+}
+
+div.chatTopStatus {
+	padding: 7px 0 6px 7px;
+	color: #FFF;
+	font-weight: bold;
+	font-variant: small-caps;
+	height: 13px;
+	font-size: 12px;
+	transition: background-color 0.5s;
+	padding-left: 55px;
+}
+
+div.chatTopStatus[data-status='-1'] {
+	visibility: hidden;
+}
+
+div.chatTopStatus[data-status='0'] {
+	background-color: #F1375A;
+}
+
+div.chatTopStatus[data-status='1'] {
+	background-color: #F1A900;
+}
+
+div.chatTopStatus[data-status='2'] {
+	background-color: #34B3C2;
+}
+
+div.chatTopStatus[data-theirchatstate='composing'] {
+	animation: color_change 1s infinite alternate;
+}
+
+div#chatContents {
+	border-bottom: none;
+	background-color: #FFF;
+	height: 330px;
+	width: 100%;
+	margin: 0;
+	padding: 0 0 8px 0;
+	box-sizing: border-box;
+	overflow-y: auto;
+	overflow-x: auto;
+	line-height: 1.6em;
+}
+
+div.chatMessage, div.chatSticker, div.chatFile, div.chatMedia {
+	background: #F0F8FF;
+	padding: 0px 5px 5px 5px;
+	word-wrap: break-word;
+	word-break: break-word;
+	display: table;
+	min-width: 55%;
+	max-width: 65%;
+	margin: 4px 10px;
+	border-radius: 2px;
+	transition: opacity 0.5s;
+	opacity: 1;
+	position: relative;
+	z-index: 0;
+}
+
+div.chatMessage[data-sending='true'] {
+	opacity: 0.5;
+}
+
+div.chatMessage, div.chatMessage * {
+	-webkit-user-select: text;
+	user-select: text;
+	cursor: text;
+	white-space: pre-wrap;
+}
+
+div.chatMessage[data-alignment='left'],
+div.chatSticker[data-alignment='left'],
+div.chatFile[data-alignment='left'],
+div.chatMedia[data-alignment='left'] {
+	float: left;
+	clear: both;
+}
+
+div.chatMessage[data-alignment='left'],
+div.chatFile[data-alignment='left'],
+div.chatMedia[data-alignment='left'] {
+	border-left: 1px solid #96A5B2;
+	border-bottom: 1px solid #96A5B2;
+	box-shadow: -1px 1px 3px rgba(150, 165, 178, 0.6);
+}
+
+div.chatMessage[data-alignment='right'],
+div.chatSticker[data-alignment='right'],
+div.chatFile[data-alignment='right'],
+div.chatMedia[data-alignment='right'] {
+	float: right;
+	clear: both;
+}
+
+div.chatMessage[data-alignment='right'],
+div.chatFile[data-alignment='right'],
+div.chatMedia[data-alignment='right'] {
+	border-right: 1px solid #96A5B2;
+	border-bottom: 1px solid #96A5B2;
+	box-shadow: 1px 1px 3px rgba(150, 165, 178, 0.6);
+}
+
+div.chatMessage[data-valid="false"] {
+	background-color: #FFD8D6;
+	font-style: italic;
+	border-color: #CFA8A6;
+}
+
+div.chatMessage[data-offline="true"],
+div.chatFile[data-offline="true"],
+div.chatMedia[data-offline="true"] {
+	background-color: #FFD6B0;
+	border-color: #CFA8A6;
+}
+
+span.chatMessageInfo, span.chatFileInfo, span.chatMediaInfo {
+	padding: 0 0px 0 10px;
+	margin: 0 0 8px -5px;
+	display: block;
+	width: 100%;
+	font-style: normal;
+	background: rgba(255, 255, 255, 0.8);
+	border-bottom: 1px solid rgba(150, 165, 178, 0.1);
+}
+
+span.chatMessageInfo span.chatMessageSender,
+span.chatFileInfo span.chatFileSender,
+span.chatMediaInfo span.chatMediaSender {
+	font-weight: bold;
+	font-variant: small-caps;
+	font-size: 0.9em;
+	opacity: 0.7;
+	margin-left: -4px;
+}
+
+span.chatMessageInfo span.chatMessageDeviceName,
+span.chatFileInfo span.chatFileDeviceName,
+span.chatMediaInfo span.chatMediaDeviceName {
+	font-size: 0.8em;
+	margin-left: 5px;
+}
+
+span.chatMessageInfo span.chatMessageDeviceName[data-visible="false"],
+span.chatFileInfo span.chatFileDeviceName[data-visible="false"],
+span.chatMediaInfo span.chatMediaDeviceName[data-visible="false"] {
+	display: none;
+}
+
+span.chatMessageInfo span.chatMessageTimestamp,
+span.chatFileInfo span.chatFileTimestamp,
+span.chatMediaInfo span.chatMediaTimestamp {
+	font-style: italic;
+	font-size: 0.8em;
+	float: right;
+	text-align: right;
+	opacity: 0.7;
+	margin-right: 5px;
+}
+
+div.chatMedia {
+}
+
+div.chatMedia img.chatMediaRenderer,
+div.chatMedia video.chatMediaRenderer {
+	width: 100%;
+	height: auto;
+	max-height: 480px;
+	object-fit: contain;
+	margin-left: 2px;
+	border-radius: 2px;
+}
+
+
+div.chatMedia img.chatMediaRenderer[data-ready="false"],
+div.chatMedia video.chatMediaRenderer[data-ready="false"] {
+	width: 96px;
+}
+
+div.chatSticker {
+	padding-bottom: 0;
+	background: #FFF;
+	width: 130px;
+	min-width: 130px;
+	max-width: 130px;
+}
+
+div.chatSticker img {
+	width: 96px;
+	height: auto;
+	display: block;
+	margin: 10px auto;
+	-webkit-user-select: none !important;
+	user-select: none !important;
+	animation-duration: 0.5s;
+	cursor: default;
+	animation-iteration-count: 2;
+}
+
+div.chatSticker[data-alignment='left'] img {
+	transform: rotate(-10deg);
+	animation-name: chatMessageStickerSpinLeft;
+}
+
+div.chatSticker[data-alignment='right'] img {
+	transform: rotate(10deg);
+	animation-name: chatMessageStickerSpinRight;
+}
+
+div.chatFile {
+	background-color: #FFF;
+	width: 200px;
+}
+
+div.chatFile img.chatFileIcon {
+	width: 64px;
+	height: auto;
+	float: left;
+	cursor: pointer;
+	margin-top: -5px;
+}
+
+div.chatFile div.chatFileProgressBar {
+	border: 1px solid #96A5B2;
+	float: left;
+	width: 67%;
+	height: 18px;
+	margin: 18px 0 0 8px;
+	padding: 1px;
+	transition: border-color 0.5s;
+}
+
+div.chatFile div.chatFileProgressBarIndicator {
+	background-color: #96A5B2;
+	height: 18px;
+	transition: background-color 0.5s;
+}
+
+div.chatFileProgressBar[data-valid="false"] {
+	border-color: #FFD8D6 !important;
+}
+
+div.chatFileProgressBar[data-complete="true"] {
+	border-color: #CACCAC !important;
+}
+
+div.chatFileProgressBar[data-valid="false"] div.chatFileProgressBarIndicator {
+	background-color: #FFD8D6 !important;
+}
+
+div.chatFileProgressBar[data-complete="true"] div.chatFileProgressBarIndicator {
+	background-color: #CACCAC !important;
+}
+
+div#chatBottom {
+	width: 100%;
+}
+
+div.chatToolbar {
+	background-color: rgba(50, 150, 220, 0.2);
+	padding: 3px 0 3px 7px;
+	white-space: nowrap;
+	overflow: hidden;
+	border-bottom: 1px solid rgba(150, 165, 178, 0.5);
+}
+
+div.chatToolbar input[type=button] {
+	display: inline;
+	margin-right: 12px;
+	width: 32px;
+	height: 32px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 26px;
+	border-radius: 3px;
+	box-shadow: 1px 1px rgba(150, 165, 178, 0.5);
+}
+
+div.chatToolbar input[data-sticker="smiling"] {
+	background-image: url('../img/stickers/smiling.png');
+}
+
+div.chatToolbar input[data-sticker="grinning"] {
+	background-image: url('../img/stickers/grinning.png');
+}
+
+div.chatToolbar input[data-sticker="content"] {
+	background-image: url('../img/stickers/content.png');
+}
+
+div.chatToolbar input[data-sticker="inLove"] {
+	background-image: url('../img/stickers/inLove.png');
+}
+
+div.chatToolbar input[data-sticker="challengeAccepted"] {
+	background-image: url('../img/stickers/challengeAccepted.png');
+}
+
+div.chatToolbar input[data-sticker="angry"] {
+	background-image: url('../img/stickers/angry.png');
+}
+
+div.chatToolbar input[data-sticker="confused"] {
+	background-image: url('../img/stickers/confused.png');
+}
+
+div.chatToolbar input[data-sticker="crying"] {
+	background-image: url('../img/stickers/crying.png');
+}
+
+div.chatToolbar input.recordButton {
+	position: absolute;
+	z-index: 0;
+	right: 42px;
+	background-image: url('../img/icons/record.png');
+	background-size: 24px;
+}
+
+div.chatToolbar input.recordButton[data-active="true"] {
+	box-shadow: inset 1px 1px #96A5B2 !important;
+	outline: none !important;
+}
+
+div.chatToolbar div.recordModal:before {
+	content: "";
+	position: absolute;
+	bottom: -20px;
+	left: 93px;
+	border-width: 20px 20px 0;
+	border-style: solid;
+	border-color: #000 transparent;
+}
+
+div.chatToolbar div.recordModal {
+	position: fixed;
+	right: 24px;
+	bottom: 80px;
+	padding: 15px;
+	margin: 1em 0 3em;
+	border-radius: 2px;
+	background-color: #000;
+	box-shadow: 0px 2px 10px #999;
+	width: 128px;
+	height: 118px;
+	transition: opacity 0.5s, bottom 0.5s;
+	visibility: hidden;
+	opacity: 0;
+}
+
+div.chatToolbar div.recordModal[data-visible="true"] {
+	opacity: 1;
+	visibility: visible;
+	bottom: 93px;
+}
+
+div.chatToolbar div.recordModal:after {
+	content: "";
+	position: absolute;
+	bottom: -13px;
+	left: 100px;
+	border-width: 13px 13px 0;
+	border-style: solid;
+	border-color: #000 transparent;
+}
+
+div.chatToolbar div.recordModalCountdown {
+	position: absolute;
+	top: 10px;
+	left: 33px;
+	z-index: 2;
+	color: #FFF;
+	font-weight: bold;
+	padding: 25px 30px 30px 30px;
+	font-size: 40px;
+	text-align: center;
+	border-radius: 100px;
+	width: 30px;
+	height: 35px;
+	background-color: rgba(0, 0, 0, 0.7);
+	opacity: 1;
+	transition: opacity 0.2s;
+	border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+div.chatToolbar div.recordModalCountdown[data-visible="false"] {
+	opacity: 0;
+}
+
+div.chatToolbar video.recordModalVideo {
+	width: 158px;
+	height: auto;
+	position: absolute;
+	z-index: 1;
+	top: 0px;
+	left: 0px;
+}
+
+div.chatToolbar div.recordModalControls {
+	position: absolute;
+	bottom: 5px;
+	left: 6px;
+}
+
+div.chatToolbar div.recordModalControls input[type="button"] {
+	border-radius: 100px;
+	background-color: #666;
+	background-size: 28px 28px;
+	width: 20px;
+	height: 20px;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	margin: 0 10px 0 0;
+}
+
+div.chatToolbar div.recordModalControls input.recordModalSend {
+	background-image: url('../img/icons/approve.png');
+}
+
+div.chatToolbar div.recordModalControls input.recordModalCancel {
+	background-image: url('../img/icons/cancel.png');
+}
+
+div.chatToolbar div.recordModalDuration {
+	border: 1px solid #ED655F;
+	float: right;
+	width: 80px;
+	margin-top: 6px;
+	padding: 1px;
+}
+
+div.chatToolbar div.recordModalDurationIndicator {
+	background-color: #ED655F;
+	height: 4px;
+	max-width: 100%;
+}
+
+div.chatToolbar div.recordModalDurationIndicator[data-blinking="true"] {
+	animation: blink 0.5s step-start 0s infinite;
+}
+
+div.chatToolbar input.sendFileButton {
+	position: absolute;
+	z-index: 0;
+	right: 2px;
+	background-image: url('../img/files/image.png');
+	background-size: 32px;
+}
+
+form#chatInput {
+	width: 100%;
+	display: block;
+}
+
+textarea#chatInputText {
+	width: 100%;
+	height: 65px;
+	resize: none;
+	box-sizing: border-box;
+	outline: none;
+	cursor: text;
+	padding: 8px 5px 5px 8px;
+	border: none;
+}
+
+textarea#chatInputText[data-enabled='false'] {
+	cursor: not-allowed !important;
+}

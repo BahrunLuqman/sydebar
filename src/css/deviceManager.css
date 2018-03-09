@@ -1,0 +1,121 @@
+div.deviceManager {
+
+}
+
+div#deviceManagerTop {
+	background-color: #EEE;
+	border-bottom: 1px solid #96A5B2;
+	padding: 2px;
+}
+
+div#deviceManagerTop h2 {
+	margin: 10px 25px 5px 25px;
+	font-size: 16px;
+	font-variant: small-caps;
+}
+
+div#deviceManagerTop label.deviceManagerTrustedOnly {
+	padding: 0 0 0 20px;
+	display: block;
+}
+
+div#deviceManagerTop label.deviceManagerTrustedOnly[data-visible="false"] {
+	display: none;
+}
+
+span.deviceManagerTrustedOnlyText {
+	position: relative;
+	bottom: 2px;
+	font-size: 12px;
+}
+
+div#deviceManagerContents {
+
+}
+
+div.device {
+	background-color: #FFF;
+	height: 65px;
+	padding: 10px 5px;
+	border-bottom: 1px solid #96A5B2;
+}
+
+div.device div.deviceIcon {
+	width: 40px;
+	height: 40px;
+	background-size: 40px;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 0 10px 10px 20px;
+	border: 1px solid #FFF;
+	float: left;
+}
+
+div.device div.deviceIcon[data-icon='0'] {
+	background-image: url('../img/devices/laptop.png');
+}
+
+div.device div.deviceIcon[data-icon='1'] {
+	background-image: url('../img/devices/allInOne.png');
+}
+
+div.device div.deviceIcon[data-icon='2'] {
+	background-image: url('../img/devices/desktop.png');
+}
+
+div.device h2.deviceName {
+	margin: 3px 0 0 0;
+	-webkit-user-select: text;
+	user-select: text;
+}
+
+div.device p.deviceFingerprint {
+	font-family: monospace !important;
+	-webkit-user-select: text;
+	user-select: text;
+	cursor: text;
+	position: relative;
+	bottom: 15px;
+	font-size: 14px;
+	margin-left: 20px;
+}
+
+div.device label.deviceTrusted {
+	display: block;
+	float: right;
+	position: relative;
+	bottom: 24px;
+	left: 40px;
+	background-color: #F0F8FF;
+	border-radius: 3px;
+	padding: 10px;
+}
+
+div.device label.deviceTrusted[data-visible="false"] {
+	display: none;
+}
+
+div.device label.deviceTrusted input.deviceTrustedCheckbox {
+	margin: 0 8px 0 0;
+}
+
+div.device label.deviceTrusted span.deviceTrustedText {
+	position: relative;
+	bottom: 2px;
+}
+
+div.device input.removeDevice {
+	float: right;
+	position: relative;
+	bottom: 24px;
+	right: 30px;
+	margin-bottom: 15px;
+}
+
+div.device input.removeDevice[data-visible='false'] {
+	visibility: hidden;
+}
+
+div#deviceManagerBottom {
+
+}
