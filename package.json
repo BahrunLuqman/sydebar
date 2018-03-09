@@ -1,0 +1,56 @@
+{
+  "name": "sydebarBuilder",
+  "version": "2.0.0",
+  "description": "Builds sydebar.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sydebar/sydebar"
+  },
+  "author": "Nadim Kobeissi",
+  "license": "GPL-3.0",
+  "homepage": "https://crypto.cat",
+  "devDependencies": {
+    "electron": "latest"
+  },
+  "scripts": {
+    "setup": "npm install",
+    "dev": "electron src/app.js",
+    "win": "build -w",
+    "mac": "build -m",
+    "linux": "build -l"
+  },
+  "build": {
+  	"appId": "com.sydebar.sydebar",
+	"copyright": "Copyright 2011-2017 Nadim Kobeissi",
+	"asar": true,
+	"compression": "maximum",
+	"directories": {
+		"app": "src",
+		"output": "dist"
+	},
+	"mac": {
+		"category": "public.app-category.productivity",
+		"target": ["pkg"],
+		"icon": "src/img/logo/logo.icns",
+		"type": "distribution"
+	},
+	"nsis": {
+		"oneClick": true,
+		"runAfterFinish": true,
+		"guid": "sydebar",
+		"installerIcon": "src/img/logo/logo.ico",
+		"installerHeaderIcon": "src/img/logo/64x64.png",
+		"menuCategory": true
+	},
+	"win": {
+		"target": ["nsis"],
+		"icon": "src/img/logo/logo.ico",
+		"legalTrademarks": "sydebar"
+	},
+	"linux": {
+		"category": "Network",
+		"target": ["AppImage"],
+		"icon": "src/img/logo/"
+	}
+  }
+}
