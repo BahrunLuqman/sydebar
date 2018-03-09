@@ -6,9 +6,9 @@
     "type": "git",
     "url": "git+https://github.com/sydebar/sydebar"
   },
-  "author": "Nadim Kobeissi",
+  "author": "Omar al Amiri",
   "license": "GPL-3.0",
-  "homepage": "https://crypto.cat",
+  "homepage": "https://sydebar.io",
   "devDependencies": {
     "electron": "latest"
   },
@@ -21,7 +21,7 @@
   },
   "build": {
   	"appId": "com.sydebar.sydebar",
-	"copyright": "Copyright 2011-2017 Nadim Kobeissi",
+	"copyright": "Copyright 2011-2017 Omar al Amiri",
 	"asar": true,
 	"compression": "maximum",
 	"directories": {
