@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="
+		user-scalable=no, initial-scale=1,
+		maximum-scale=1, minimum-scale=1,
+		width=device-width, height=device-height,
+		target-densitydpi=device-dpi"
+	/>
+	<meta name="keywords" content="sydebar, private chat, private im, secure im, secure chat,
+		encrypted chat, encrypted im, open source encrypted chat, crypto cat" />
+	<meta name="description" content="Discutez facilement et de façon sécurisée avec vos amis grâce à sydebar." />
+	<title>sydebar</title>
+	<link rel="stylesheet" href="css/fonts.css" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="stylesheet" href="css/octicons.css" type="text/css" />
+	<link rel="icon" type="image/png" href="img/logo.png" />
+	<link rel="image_src" href="https://crypto.cat/img/logo.png" />
+	<script type="application/javascript" src="js/smooth-scroll.js"></script>
+	<script type="application/javascript" src="js/util.js"></script>
+	<script type="application/javascript">
+		window.addEventListener('load', function() {
+			'use strict';
+			var dBF = document.getElementById('downloadButtonForm');
+			var dBT = document.getElementById('downloadButtonText');
+			var dL  = {
+				win32:  'https://download.crypto.cat/client/sydebar-win32-x64.zip',
+				linux:  'https://download.crypto.cat/client/sydebar-linux-x64.zip',
+				darwin: 'https://download.crypto.cat/client/sydebar-darwin-x64.zip'
+			};
+			var dT  = {
+				win32:  'Télécharger sydebar pour Windows',
+				linux:  'Télécharger sydebar pour Linux',
+				darwin: 'Télécharger sydebar pour Mac'
+			};
+			dBF.action    = dL[getOS()];
+			dBT.innerText = dT[getOS()];
+		});
+	</script>
+</head>
+<body>
+	<div id="top">
+		<img class="logo" src="img/logo.png" alt="" draggable="false" />
+		<div class="nav">
+			<a href="#" class="current">Accueil</a>
+			<a href="news.html">Nouvelles</a>
+			<a href="mission.html">Mission</a>
+			<a href="security.html">Sécurité</a>
+			<a href="help.html">Aide</a>
+			<a href="stickers">Autocollants</a>
+			<a href="https://github.com/sydebar/sydebar">Code</a>
+		</div>
+	</div>
+	
+	<div id="main">
+		<div class="mainLeft">
+			<img class="mainLeftSplash" src="img/3.2.07.png" alt="Discutez avec Nadim" title="sydebar sur macOS." draggable="false" />
+		</div>
+		<div class="mainRight">
+			<h1>Discutez en toute confidentialité.</h1>
+			<p>
+				sydebar est un logiciel libre avec une mission simple: permettre à tous de discuter de façon privée avec ses amis.
+			</p>
+			<ul class="mainFeatureList">
+				<li>
+					<em>Open source.</em> Notre code est libre et ouvert.
+				<li>
+					<em>Chiffré par défaut.</em> Chaque message est chiffré. Toujours.
+				</li>
+				<li>
+					<em>Discussions surs.</em> Même si vos clés sont dérobés.
+				</li>
+				<li>
+					<em>Appareils multiples.</em> Recevez vos messages même si vous êtes hors-connexion.
+				</li>
+				<li>
+					<em>Partage de fichiers.</em> Partagez des fichiers en toute sécurité.
+				</li>
+			</ul>
+			<form id="downloadButtonForm" action="https://download.crypto.cat/client/sydebar-win32-x64.zip">
+				<button id="downloadButton">
+					<span class="mega-octicon octicon-cloud-download"></span>
+					<span id="downloadButtonText">Télécharger sydebar pour Windows</span>
+				</button>
+			</form>
+			<span class="downloadLinks">
+				Disponible pour <a href="https://download.crypto.cat/client/sydebar-win32-x64.zip">Windows</a>, 
+				<a href="https://download.crypto.cat/client/sydebar-linux-x64.zip">Linux</a> et 
+				<a href="https://download.crypto.cat/client/sydebar-darwin-x64.zip">Mac</a>.
+			</span>
+		</div>
+	</div>
+
+	<div id="bottom">
+		<div class="bottomLeft">
+			<a href="https://twitter.com/sydebarapp">Suivez sydebar sur Twitter</a><br />
+			<a href="index.html">English</a> - Français - <a href="ca.html">Català</a>
+		</div>
+		<div class="bottomRight">
+			"sydebar" et le logo sydebar sont des marques déposées.<br />
+			Copyright © 2018 Nadim Kobeissi, tous droits réservés.
+		</div>
+	</div>
+</body>
+</html>

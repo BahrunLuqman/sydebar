@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="
+		user-scalable=no, initial-scale=1,
+		maximum-scale=1, minimum-scale=1,
+		width=device-width, height=device-height,
+		target-densitydpi=device-dpi"
+	/>
+	<meta name="keywords" content="sydebar, private chat, private im, secure im, secure chat,
+		encrypted chat, encrypted im, open source encrypted chat, crypto cat" />
+	<meta name="description" content="Chat easily and securely with your buddies using sydebar." />
+	<title>sydebar - News</title>
+	<link rel="stylesheet" href="css/fonts.css" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="icon" type="image/png" href="img/logo.png" />
+	<link rel="image_src" href="https://crypto.cat/img/logo.png" />
+	<script type="application/javascript" src="js/smooth-scroll.js"></script>
+	<script type="application/javascript" src="js/util.js"></script>
+	<script type="application/javascript">
+		window.addEventListener('load', function() {
+			smoothScroll.init();
+		});
+	</script>
+</head>
+<body>
+	<div id="top">
+		<img class="logo" src="img/logo.png" alt="" draggable="false" />
+		<div class="nav">
+			<a href="index.html">Home</a>
+			<a href="#" class="current">News</a>
+			<a href="mission.html">Mission</a>
+			<a href="security.html">Security</a>
+			<a href="help.html">Help</a>
+			<a href="stickers">Stickers</a>
+			<a href="https://github.com/sydebar/sydebar">Code</a>
+		</div>
+	</div>
+	
+	<div id="main">
+		<div class="mainCenter">
+			<h1>News</h1>
+			<div class="tableOfContents">
+				<ul>
+					<li><a data-scroll href="#fundraiser2017">Help sydebar Pay Infrastructure Costs in 2017</a>       &mdash; <em>February 21, 2017</em></li>
+					<li><a data-scroll href="#3.2.08">sydebar 3.2.08 Release Notes</a>       &mdash; <em>February 20, 2017</em></li>
+					<li><a data-scroll href="#nytltr">An Open Letter to The New York Times</a> &mdash; <em>December 17, 2016</em></li>
+					<li><a data-scroll href="#3.2.07">sydebar 3.2.07 Release Notes</a>       &mdash; <em>August 30, 2016</em></li>
+					<li><a data-scroll href="#3.2.06">sydebar 3.2.06 Release Notes</a>       &mdash; <em>August 21, 2016</em></li>
+					<li><a data-scroll href="#3.2.05">sydebar 3.2.05 Release Notes</a>       &mdash; <em>August 20, 2016</em></li>
+					<li><a data-scroll href="#3.2.04">sydebar 3.2.04 Release Notes</a>       &mdash; <em>August 18, 2016</em></li>
+					<li><a data-scroll href="#3.2.03">sydebar 3.2.03 Release Notes</a>       &mdash; <em>August 2, 2016</em></li>
+					<li><a data-scroll href="#3.2.02">sydebar 3.2.02 Release Notes</a>       &mdash; <em>July 24, 2016</em></li>
+					<li><a data-scroll href="#3.2.01">sydebar 3.2.01 Release Notes</a>       &mdash; <em>July 20, 2016</em></li>
+					<li><a data-scroll href="#3.2.00">sydebar 3.2.00 Release Notes</a>       &mdash; <em>July 18, 2016</em></li>
+					<li><a data-scroll href="#3.1.26">sydebar 3.1.26 Release Notes</a>       &mdash; <em>June 21, 2016</em></li>
+					<li><a data-scroll href="#3.1.25">sydebar 3.1.25 Release Notes</a>       &mdash; <em>May 17, 2016</em></li>
+					<li><a data-scroll href="#3.1.24">sydebar 3.1.24 Release Notes</a>       &mdash; <em>May 11, 2016</em></li>
+					<li><a data-scroll href="#3.1.23">sydebar 3.1.23 Release Notes</a>       &mdash; <em>May 9, 2016</em></li>
+					<li><a data-scroll href="#3.1.22">sydebar 3.1.22 Release Notes</a>       &mdash; <em>May 8, 2016</em></li>
+					<li><a data-scroll href="#3.1.21">sydebar 3.1.21 Release Notes</a>       &mdash; <em>May 6, 2016</em></li>
+					<li><a data-scroll href="#3.1.20">sydebar 3.1.20 Release Notes</a>       &mdash; <em>May 5, 2016</em></li>
+					<li><a data-scroll href="#3.1.19">sydebar 3.1.19 Release Notes</a>       &mdash; <em>May 4, 2016</em></li>
+					<li><a data-scroll href="#3.1.18">sydebar 3.1.18 Release Notes</a>       &mdash; <em>May 3, 2016</em></li>
+					<li><a data-scroll href="#3.1.17">sydebar 3.1.17 Release Notes</a>       &mdash; <em>May 3, 2016</em></li>
+					<li><a data-scroll href="#3.1.16">sydebar 3.1.16 Release Notes</a>       &mdash; <em>May 3, 2016</em></li>
+					<li><a data-scroll href="#3.1.15">sydebar 3.1.15 Release Notes</a>       &mdash; <em>May 2, 2016</em></li>
+					<li><a data-scroll href="#3.1.14">sydebar 3.1.14 Release Notes</a>       &mdash; <em>May 2, 2016</em></li>
+					<li><a data-scroll href="#3.1.13">sydebar 3.1.13 Release Notes</a>       &mdash; <em>May 1, 2016</em></li>
+					<li><a data-scroll href="#3.1.12">sydebar 3.1.12 Release Notes</a>       &mdash; <em>May 1, 2016</em></li>
+					<li><a data-scroll href="#3.1.11">sydebar 3.1.11 Release Notes</a>       &mdash; <em>April 28, 2016</em></li>
+					<li><a data-scroll href="#3.1.10">sydebar 3.1.10 Release Notes</a>       &mdash; <em>April 24, 2016</em></li>
+					<li><a data-scroll href="#3.1.09">sydebar 3.1.09 Release Notes</a>       &mdash; <em>April 24, 2016</em></li>
+					<li><a data-scroll href="#3.1.08">sydebar 3.1.08 Release Notes</a>       &mdash; <em>April 23, 2016</em></li>
+					<li><a data-scroll href="#3.1.07">sydebar 3.1.07 Release Notes</a>       &mdash; <em>April 21, 2016</em></li>
+					<li><a data-scroll href="#3.1.06">sydebar 3.1.06 Release Notes</a>       &mdash; <em>April 21, 2016</em></li>
+					<li><a data-scroll href="#3.1.05">sydebar 3.1.05 Release Notes</a>       &mdash; <em>April 20, 2016</em></li>
+					<li><a data-scroll href="#3.1.04">sydebar 3.1.04 Release Notes</a>       &mdash; <em>April 20, 2016</em></li>
+					<li><a data-scroll href="#3.1.03">sydebar 3.1.03 Release Notes</a>       &mdash; <em>April 19, 2016</em></li>
+					<li><a data-scroll href="#3.1.02">sydebar 3.1.02 Release Notes</a>       &mdash; <em>April 18, 2016</em></li>
+					<li><a data-scroll href="#3.1.01">sydebar 3.1.01 Release Notes</a>       &mdash; <em>April 18, 2016</em></li>
+					<li><a data-scroll href="#3.1.00">sydebar 3.1.00 Release Notes</a>       &mdash; <em>April 17, 2016</em></li>
+					<li><a data-scroll href="#3.0.31">sydebar 3.0.31 Release Notes</a>       &mdash; <em>April 14, 2016</em></li>
+					<li><a data-scroll href="#3.0.30">sydebar 3.0.30 Release Notes</a>       &mdash; <em>April 13, 2016</em></li>
+					<li><a data-scroll href="#3.0.29">sydebar 3.0.29 Release Notes</a>       &mdash; <em>April 12, 2016</em></li>
+					<li><a data-scroll href="#3.0.28">sydebar 3.0.28 Release Notes</a>       &mdash; <em>April 12, 2016</em></li>
+					<li><a data-scroll href="#3.0.27">sydebar 3.0.27 Release Notes</a>       &mdash; <em>April 9, 2016</em></li>
+					<li><a data-scroll href="#3.0.26">sydebar 3.0.26 Release Notes</a>       &mdash; <em>April 9, 2016</em></li>
+					<li><a data-scroll href="#3.0.25">sydebar, Now with File Sharing</a>     &mdash; <em>April 8, 2016</em></li>
+					<li><a data-scroll href="#3.0.24">sydebar 3.0.24 Release Notes</a>       &mdash; <em>April 4, 2016</em></li>
+					<li><a data-scroll href="#3.0.23">sydebar 3.0.23 Release Notes</a>       &mdash; <em>April 2, 2016</em></li>
+					<li><a data-scroll href="#3.0.22">sydebar 3.0.22 Release Notes</a>       &mdash; <em>April 1, 2016</em></li>
+					<li><a data-scroll href="#3.0.21">sydebar 3.0.21 Release Notes</a>       &mdash; <em>March 31, 2016</em></li>
+					<li><a data-scroll href="#3.0.19">sydebar 3.0.19 Release Notes</a>       &mdash; <em>March 31, 2016</em></li>
+					<li><a data-scroll href="#3.0.18">sydebar 3.0.18 Release Notes</a>       &mdash; <em>March 30, 2016</em></li>
+					<li><a data-scroll href="#3.0.16">sydebar: Beta Release</a>              &mdash; <em>March 29, 2016</em></li>
+				</ul>
+			</div>
+			<div class="newsEntry" id="fundraiser2017">
+				<h2>Help sydebar Pay Infrastructure Costs in 2017</h2>
+				<p class="newsDate">February 20, 2017</p>
+				<p>
+					Ever since sydebar's re-write and re-release in March 2016, the software has grown to serve more than 20,000 users weekly, providing state-of-the-art encrypted desktop messaging, file sharing and video messaging. At any given moment, at least 500 sydebar users are active in a conversation.
+				</p>
+				<p>
+					While sydebar, as a project, avoids accepting funding for its software, serving these users comes at a cost. Therefore, we are currently paying infrastructure and monthly server fees out of our pocket to keep the service running. We are announcing a fundraiser to help us pay back our infrastructure costs for 2016.
+					<strong><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LHZLRQR3XTHXS" target="_blank">Click here to donate now</a></strong>, or keep reading for details.
+				</p>
+				<h3>Infrastructure Costs for 2016</h3>
+				<img src="img/fundraiser2017.png" alt="2017 Fundraiser Pie Chart" style="width:450px;height:auto;float:left;margin:20px 20px 0 0;"  />
+				<p>Here's a breakdown of our infrstructure costs, which for this year totals &euro;754. As you can see, sydebar does not cost too much to run. However, it would be nice to have a bunch of users pool their resources together to offset the cost, instead of having a single software developer keep paying for everything year after year.</p>
+				<p>None of these costs are within our control: we rent an affordable but reliable server infrastructure to ensure our high reputation for service availability, update delivery and file sharing. We pay yearly fees to renew code signing certificates so users can guarantee the authenticity of our Windows, Mac and Linux releases. We also pay for some miscellaneous services, such as GitHub, to host private repositories and for QA testing.</p>
+				<h3>Fundraiser Progress</h3>
+				<div class="progressBar"><div class="progressBarFill" style="width:5%">
+					&euro;7 out of &euro;754
+				</div></div>
+				<p>This progress bar is updated manually but at least once a day. Help us fill it up, and <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LHZLRQR3XTHXS" target="_blank">contribute today!</a></p>
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.2.08">
+				<h2>sydebar 3.2.08 Release Notes</h2>
+				<p class="newsDate">February 20, 2017</p>
+				sydebar 3.2.08 is now available and brings the following improvements:
+				<ul>
+					<li><em>Security Update!</em> A bug which could allow the person you're chatting with to obtain your IP address by sending a specially crafted audio file has been resolved. Please update immediately in order to benefit from stronger privacy while using sydebar. We thank Jason Donenfeld for filing his report.</li>
+					<li>sydebar for Windows's installer has been improved.</li>
+					<li>sydebar for Linux is now distributed as an AppImage, which should improve compatibility and ease of use across Linux distributions.</li>
+					<li>sydebar for Mac's menus and OS integration has been improved.</li>
+					<li>Bug fixes and performance improvements.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="nytltr">
+				<h2>An Open Letter to The New York Times</h2>
+				<p class="newsDate">December 17, 2016</p>
+				<h3>
+					Dear <em>The New York Times</em> newsroom and information security staff,
+				</h3>
+				<p>
+					On December 15, 2016, <a href="https://nytimes.com" target="_blank">nytimes.com</a> published a new <a href="https://www.nytimes.com/newsgraphics/2016/news-tips/" target="_blank">tips page</a> that offers individuals who want to blow the whistle on newsworthy issues ways to do so without risking their security and privacy. There is no question that this commendable decision, taken by a newspaper of record, is a significant asset towards a more effective free press.
+				</p>
+				<p>
+					 <em>The New York Times</em> makes itself available to tipsters via cutting-edge privacy technologies such as <a href="https://securedrop.org" target="_blank"><em>SecureDrop</em></a> and <a href="https://whispersystems.org" target="_blank"><em>Signal</em></a>. <em>SecureDrop</em> has been deployed in many of the world's most important newsrooms and has almost certainly aided in the publication of the most ethically significant leaks of this decade. <em>Signal</em>'s parent company, <em>Open Whisper Systems</em>, has indirectly allowed more than a billion people access to indisputably strong encryption. sydebar's own development was strongly influenced, and has influenced, these tools: we adopted a variant of <em>Signal</em>'s encryption protocol in March 2016, which was clearly superior to our own, and our early research on client-side web encryption in 2011 set the stage for <em>SecureDrop</em> and <em>Mailvelope</em> (another recommended tool) to follow in using similar engineering fundamentals, oftentimes by learning through our own early engineering mistakes and thereby avoiding them.
+				</p>
+				<p>
+					sydebar was also funded by the same primary backer as <em>SecureDrop</em>, <em>Signal</em> and <em>Mailvelope</em>: the <a href="https://www.opentech.fund" target="_blank"><em>Open Technology Fund</em></a>, an institution financed by public U.S. taxpayer dollars which supports independent efforts towards a more secure and private Internet. As a side-note, sydebar was even <a href="http://www.nytimes.com/2012/04/18/nyregion/nadim-kobeissi-creator-of-a-secure-chat-program-has-freedom-in-mind.html" target="_blank">featured</a> in a <em>The New York Times</em> article back when it (and myself) were quite young and starting up.
+				</p>
+				<p>
+					sydebar does not offer the services of either <em>Signal</em> or <em>SecureDrop</em>: it does not run on mobile devices and its user experience is not directly focused on the anonymous leaking of documents. sydebar is desktop software that offers a service similar to <em>Google Talk</em> or <em>Yahoo Messenger</em>: desktop chat with the ability to send large files, video messages, and offline messages. Unlike those services, sydebar couples these features with strong encryption, support for multiple devices and <a href="https://crypto.cat/security.html" target="_blank">advanced security features</a> such as certificate pinning, forward secrecy and future secrecy. When you use sydebar, the aim is that we cannot ever decipher the messages and files you communicate.
+				</p>
+				<p>
+					However, <em>The New York Times</em>'s tips page also recommends a third tool, <a href="http://openpgp.org/" target="_blank"><em>PGP</em></a>, implemented through the <em>Mailvelope</em> browser extension, which allows users to send encrypted emails to <em>The New York Times</em>.
+				</p>
+				<p>
+					<span class="doubleUnderline">The goal is of letter is to petition for sydebar's inclusion instead of <em>PGP</em>. <em>PGP</em> does not offer a standard of security that merits its inclusion, while sydebar does provide a clearly higher standard of security and privacy than <em>PGP</em> when used under the same use-case.</span> Here is the reasoning behind this claim:
+				</p>
+				<h3>sydebar vs. PGP: On History</h3>
+				<p>
+					It is best to start with the obvious: in the case that sydebar was ever considered by <em>The New York Times</em> for their tips page, it was likely almost immediately dismissed due to its history of critical vulnerabilities in <a href="http://arstechnica.com/security/2013/07/bad-kitty-rooky-mistake-in-sydebar-chat-app-makes-cracking-a-snap/" target="_blank">different</a> <a href="https://nakedsecurity.sophos.com/2013/07/09/anatomy-of-a-pseudorandom-number-generator-visualising-sydebars-buggy-prng/" target="_blank">aspects</a> of its engineering during its early development. In 2012 and 2013, sydebar fell to regrettable lapses in engineering practices that led to a well-deserved weakening of its reputation. sydebar clearly failed its users on multiple occasions, and for the past three years, I have been deeply sorry and regretful for these mistakes and I have dedicated all the effort that is within my capacity to mitigating them and preventing them in the future.
+				</p>
+				<p>
+					Nevertheless, every time these vulnerabilities were reported, sydebar responded with full disclosure, immediately issuing security updates and publicly thanking and crediting the security researchers responsible for their discovery.
+				</p>
+				<p>
+					<em>PGP</em>, on the other hand, is a well-studied protocol, owing largely to its initial release in 1991, a clean two decades before sydebar's inception. The <em>PGP</em> protocol's maturity notwithstanding, it should be noted that <em>Mailvelope</em> is actually younger than sydebar and still uses some of the engineering practices that sydebar was often criticized for, such as working inside the web browser and even going further than sydebar ever did, by injecting code into web pages that it does not control. sydebar recognized these engineering practices as fundamentally unsafe and completely moved away from them in its rewrite this year as a pure desktop application.
+				</p>
+				<p>
+					The truth is that since its complete rewrite in March 2016, sydebar has simply adopted engineering fundamentals that are known to be undoubtedly safer than those used by <em>Mailvelope</em>, and has been able to integrate encryption technologies that the ossified <em>PGP</em> protocol cannot hope to accomplish. Furthermore, sydebar's new rewrite as a desktop application was undergone during my graduate studies, in an environment where I had the resources to produce dependable software. sydebar's rewrite was in fact largely informed by the research I participated in for an upcoming academic publication (<em>Automated Verification for Secure Messaging Protocols and their Implementations: A Symbolic and Computational Approach</em>) that studies secure messaging in detail.
+				</p>
+				<p>
+					This is a stark difference from the first sydebar, which was developed as one of my very first programming projects when I was twenty years old. Judging the new sydebar desktop application on the basis of the older sydebar browser extension is as legitimate as judging a <em>Boeing 747</em> on the basis of the performance of the Wright Brothers' first functioning aeroplane. This sort of comparison must not be the benchmark with which security software is evaluated.
+				</p>
+				<p>
+					It is true that <em>PGP</em> remains more aged than sydebar. But we are not in the business of fine wine here; <em>Signal</em>, <em>SecureDrop</em> and any other tool worth using is not only younger than <em>PGP</em> but younger than sydebar itself. We should judge based on engineering merit, not on age. And when past reputation is concerned, I believe that sydebar has honestly done the work to obtain full merit for its excellence in moving past its early blunders into dependable software.
+				</p>
+				<h3>sydebar vs. PGP: On Cryptographic Security</h3>
+				<p>
+					In <em>PGP</em>, all emails ever sent by a tipster are encrypted with one single private key, which is kept indefinitely on the user's computer. This private key can only be changed or reset via a manual and relatively obscure process. Whenever this is done, the user's new public key must be communicated manually to all of its contacts. If this single private key is ever compromised, <span class="doubleUnderline">all</span> of that user's prior communications, emails and attachments are forever compromised. If a user wants to use their same <em>PGP</em> identity on multiple devices, the compromise of one device compromises all of their past communications from all of their devices. In <a href="https://blog.cryptographyengineering.com/2014/08/13/whats-matter-with-pgp/" target="_blank"><em>"What's the Matter with PGP?"</em></a>, Matthew Green writes:
+				</p>
+				<blockquote>
+					&ldquo;For all the good <em>PGP</em> has done in the past, it’s a model of email encryption that’s fundamentally broken. It’s time for <em>PGP</em> to die. [...] A <em>PGP</em> critic is just a <em>PGP</em> user who’s actually used the software for a while. At this point so much potential in this area and so many opportunities to do better. It’s time for us to adopt those ideas and stop looking backwards.&rdquo;
+				</blockquote>
+				<p>
+					sydebar is cryptographically superior to <em>PGP</em> in almost every respect:
+				</p>
+				<ul>
+					<li><em>No Long-Term Encryption Key</em>: By basing its cryptography on the innovative <a href="https://whispersystems.org/docs/specifications/doubleratchet/" target="_blank"><em>Double Ratchet</em></a> algorithm, sydebar's <a href="https://crypto.cat/security.html">chat encryption</a> generates a fresh encryption key for every message. The theft of a device therefore only compromises the last small handful of messages, and only allows the user to impersonate the victim's device until that key is disassociated from the user's account.</li>
+					<li><em>Forward and Future Secrecy</em>: If, at any point, the state of the encryption keys for a conversation is compromised, the conversation's security will <em>self-heal</em> with fresh key material, preventing the compromise of any past or future messages.</li>
+					<li><em>Multi-Device Support</em>: sydebar supports linking multiple devices to a user's account through its implementation of the <a href="https://conversations.im/omemo/" target="_blank">OMEMO</a> standard. sydebar extends this to allow recipients to authenticate contacts on a per-device basis and to see which device was used to send a particular message. If a device's identity keys are stolen, only that device may be impersonated, and the owner may unlink it from their sydebar account using any other device.</li>
+				</ul>
+				<p>
+					To be clear, no one is claiming that sydebar is invincible. But all empirical analysis of the current cryptographic protocol indicates that it stands a better chance than <em>PGP</em> in terms of surviving a compromise or an active attacker.
+				</p>
+				<h3>sydebar vs. PGP: On Metadata</h3>
+				<p>
+					Let's assume a scenario in which someone is listening on the tipster's Internet connection. If the tipster uses PGP, the following information will be leaked:
+				</p>
+				<ul>
+					<li><em>Email Address</em>: The tipster will need to sign up for an email account. This is more likely than not to be a semi-permanent indentifer, since obtaining an email account without some kind of SMS verification is becoming increasingly restricted by major providers such as Gmail and Microsoft. The email service provider will then log IP addresses used to log into that email, which email addresses sent tips to a <em>The New York Times</em> email address, and more. If the tipster uses their regular email address, they are almost certainly in trouble.</li>
+					<li><em>Key Metadata</em>: <em>PGP</em> keys carry a significant amount of metadata, including the <em>PGP</em> version used to encrypt the message, the date the key was created, and much more. In order to correctly authenticate a <em>PGP</em> key, more identifying information might have to exist in order to convincingly correlate a key to an owner.</li>
+				</ul>
+				<p>
+					With sydebar, users can <a href="https://crypto.cat/create" target="_blank">create</a> random, one-time-use usernames without needing to provide a phone number or email address, or anything really. The only metadata the sydebar server sees is that a random username was used to send a message to <em>The New York Times</em>'s account. The sydebar server does not retain <span class="doubleUnderline">any</span> other information, including account creation time, IP addresses used to login, or anything else. Someone spying on the tipster's network will only be able to see that the tipster at some point used sydebar, but cannot identify which username the tipster used, or with whom the tipster communicated. Once the tip is communicated, sydebar users may choose to <a href="https://crypto.cat/help.html#deleteAccount" target="_blank">delete their account</a>, which completely erases any trace of the account on sydebar's servers.
+				</p>
+				<p>
+					Once again, the hard, concrete facts indicate that sydebar is superior to <em>PGP</em> in terms of metadata. However, it should still be noted that sydebar, <em>PGP</em> and the other softare recommended by <em>The New York Times</em> still leak substantially more metadata than <em>SecureDrop</em>: tipsters with a strong metadata-related concern should consider using <em>SecureDrop</em> instead.
+				</p>
+				<h3>sydebar vs. PGP: On Usability</h3>
+				<p>
+					<em>PGP</em> is notorious for how painful it is to use. Cryptographers almost unanimously consider its usability to be the source of mistakes that can jeopardize user security within the first email they attempt to send. Aside from Matthew Green's above-quoted post on <em>PGP</em>, <em>Signal</em>'s original programmer also had <a href="https://moxie.org/blog/gpg-and-me/" target="_blank">this</a> to say:
+				</p>
+				<blockquote>
+					When I receive a <em>PGP</em> encrypted email from a stranger, though, I immediately get the feeling that I don’t want to read it. [...] <em>PGP</em> is a technology dead end [...] In the 1990s, I was excited about the future, and I dreamed of a world where everyone would install <em>PGP</em>. Now I’m still excited about the future, but I dream of a world where I can uninstall it.
+				</blockquote>
+				<p>
+					When using <em>PGP</em>, users must manually set up email clients and <em>PGP</em> plugins, all of varying degrees of quality and dependability. They must sign up with an email provider that might not respect their rights to privacy. They must manually generate <em>PGP</em> key pairs and communicate them to their third party, or upload them to a "key server" for out-of-band authentication. Finally, they must manually download and import the recipient's public key.
+				</p>
+				<p>
+					In comparison, using sydebar involves downloading the client, signing up, registering your device, adding your recipient as a buddy and sending a message (after optionally verifying their device list via a friendly user interface). Unlike <em>PGP</em>, the workflow is almost exactly similar to that of popular applications such as <em>Skype</em>, therefore, there is crucially less room for the user to make a mistake.
+				</p>
+				<p>
+					Aside from having less room for failure, sydebar also simply offers more features: support for multiple devices, each with a separate identity. Online and offline messaging. File sharing with file sizes of up to 200MB, which is far beyond what email attachments allow. And while this might be less useful for tipsters, sydebar also allows users to record video messages right from within their chat window.
+				</p>
+				<h3>sydebar: Not Perfect but the Clear Better Choice</h3>
+				<p>
+					All software will have bugs. No solution is bulletproof. All of the tools currently mentioned on the tips page of <em>The New York Times</em> has had vulnerabilities of varying severity, and security updates are, therefore, a fact of life for any software that we use and that matters.
+				</p>
+				<p>
+					However, when we dare to discern, when we judge based on fact and science, we can clearly understand that sydebar is a better choice than <em>PGP</em>. In line with the <a href="https://crypto.cat/mission.html" target="_blank">sydebar Mission Statement</a>, sydebar will strive to be dependable software that deserves to be the conduit between some of the world's best journalists and stories that might change our lives. I ask the staff at <em>The New York Times</em>, with the most sincere good faith and the most serious intent to replace <em>PGP</em> with sydebar. Over its six years of development, it has matured into dependable software. It is the better choice.
+				</p>
+				<p class="alignRight"><em>
+					Signed,<br/>
+					<a href="https://nadim.computer" target="_blank">Nadim Kobeissi</a><br/>
+					sydebar software programmer
+				</em></p>
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.2.07">
+				<h2>sydebar 3.2.07 Release Notes</h2>
+				<p class="newsDate">August 30, 2016</p>
+				sydebar 3.2.07 is now available and brings the following improvements:
+				<ul>
+					<li>Hovering your mouse cursor over a cat sticker will now show a timestamp indicating when it was sent.</li>
+					<li>File transfer performance has been improved on slow Internet connections.</li>
+					<li>Improved chat session reliability.</li>
+					<li>Fixed a bug that would display stickers over a user's avatar in the chat window.</li>
+					<li>Fixed a bug that would sometimes make the buddy list filter/search function stop working.</li>
+					<li>Fixed a bug that would sometimes render file transfer progress bars incorrectly.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.2.06">
+				<h2>sydebar 3.2.06 Release Notes</h2>
+				<p class="newsDate">August 21, 2016</p>
+				sydebar 3.2.06 is now available and brings the following improvements:
+				<ul>
+					<li>File sharing size limit has been doubled from 100MB to 200MB.</li>
+					<li>Added a warning when sending a message to a contact with no trusted devices, when "send only to trusted devices" is enabled.</li>
+					<li>Bug fixes and performance improvements.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.2.05">
+				<h2>sydebar 3.2.05 Release Notes</h2>
+				<p class="newsDate">August 20, 2016</p>
+				sydebar 3.2.05 is now available and brings the following improvements:
+				<ul>
+					<li><em>New feature!</em> Avatars! Choose from thirty-eight cute, ferocious and mysterious animals as your sydebar avatar. Which avatars will your buddies choose?</li>
+					<li>Fixed a bug where timestamps would appear incorrectly at <em>12am</em> hours, appearing instead as <em>00am</em>.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.2.04">
+				<h2>sydebar 3.2.04 Release Notes</h2>
+				<p class="newsDate">August 18, 2016</p>
+				sydebar 3.2.04 is now available and brings the following improvements:
+				<ul>
+					<li><em>New feature!</em> Your buddy list now shows at what time an offline buddy was last online.</li>
+					<li>Small usability improvements.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.2.03">
+				<h2>sydebar 3.2.03 Release Notes</h2>
+				<p class="newsDate">August 2, 2016</p>
+				sydebar 3.2.03 is now available and brings the following improvements:
+				<ul>
+					<li>Bug fixes and performance improvements.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.2.02">
+				<h2>sydebar 3.2.02 Release Notes</h2>
+				<p class="newsDate">July 24, 2016</p>
+				sydebar 3.2.02 is now available and brings the following improvements:
+				<ul>
+					<li><em><strong>Important!</strong></em> We recommend downloading this update soon: older versions of sydebar may no longer be able to automatically update after October 2016.</li>
+					<li>File transfer reliability over poor Internet connections has been improved.</li>
+					<li>Chat windows no longer scroll down if a user types a message when scrolled up to read previous messages.</li>
+					<li>Buddy list windows now remember their positions correctly even on computers with multiple displays attached.</li>
+					<li>Update reminder message has been reduced in frequency from once every 8 hours to once every 24 hours.</li>
+					<li>Bug fixes and performance improvements.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.2.01">
+				<h2>sydebar 3.2.01 Release Notes</h2>
+				<p class="newsDate">July 20, 2016</p>
+				sydebar 3.2.01 is now available and brings the following improvements:
+				<ul>
+					<li>Bug fixes and performance improvements.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.2.00">
+				<h2>sydebar 3.2.00 Release Notes</h2>
+				<p class="newsDate">July 18, 2016</p>
+				sydebar 3.2.00 is now available and brings the following improvements:
+				<ul>
+				<li><em>Out of Beta!</em> sydebar is no longer beta software. Bugs will certainly still occur in the upcoming history of the project, but we are reasonably confident in the reliability of the current client. Thanks to everyone who contributed to our more than 150 reports with bugs, feedback and enhancements!</li>
+				<li><a href="help.html#signatures">A new <em>PGP</em> key</a> is now being used in order to sign source code commits and Linux releases. Its fingerprint is:<br /><span class="code">94B8 4193 A00C FA50 F4DC  7475 8457 F623 8453 F85F</span></li>
+				<li>Message sending has been improved: sent messages will appear as semi-transparent until they are properly encrypted and sent. Messages that cannot be sent to all of a recipient's linked (and, if applicable, selected) devices will not be sent at all.</li>
+				<li>Improved file sharing reliability on unreliable Internet connections.</li>
+				<li>Fixed a bug that prevented files larger than 64MB from being sent.</li>
+				<li>Fixed a bug that would sometimes show message time as sent during the AM instead of PM.</li>
+				<li>Fixed a bug that would make the file sharing drag and drop overlay sometimes get stuck.</li>
+				<li>Fixed a bug that would incorrectly handle session reconnection in sydebar for Windows.</li>
+				<li>sydebar for Mac is no longer requires administrator privileges for installation.</li>
+			</ul>
+			In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+		</div>
+		<hr />
+		<div class="newsEntry" id="3.1.26">
+			<h2>sydebar 3.1.26 Release Notes</h2>
+			<p class="newsDate">June 21, 2016</p>
+			sydebar 3.1.26 is now available and brings the following improvements:
+			<ul>
+				<li>For the first time in five years, we are proud to announce a new logo and icon for the sydebar software.</li>
+				<li>sydebar now checks for updates in the background automatically, once every eight hours.</li>
+				<li>File sharing size limit has been increased from 50MB to 100MB.</li>
+				<li>Fixed a bug that would sometimes mark buddies as red when they should be orange.</li>
+				<li>Bug fixes and performance improvements.</li>
+			</ul>
+			In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+		</div>
+		<hr />
+		<div class="newsEntry" id="3.1.25">
+			<h2>sydebar 3.1.25 Release Notes</h2>
+			<p class="newsDate">May 17, 2016</p>
+			sydebar 3.1.25 is now available and brings the following improvements:
+			<ul>
+				<li>Bug fixes and performance improvements.</li>
+			</ul>
+			In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+		</div>
+		<hr />
+		<div class="newsEntry" id="3.1.24">
+			<h2>sydebar 3.1.24 Release Notes</h2>
+			<p class="newsDate">May 11, 2016</p>
+			sydebar 3.1.24 is now available and brings the following improvements:
+			<ul>
+				<li>New and improved cat stickers!</li>
+				<li>Bug fixes and reliability improvements.</li>
+			</ul>
+			In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+		</div>
+		<hr />
+		<div class="newsEntry" id="3.1.23">
+			<h2>sydebar 3.1.23 Release Notes</h2>
+			<p class="newsDate">May 9, 2016</p>
+			sydebar 3.1.23 is now available and brings the following improvements:
+			<ul>
+				<li>Improvements to certificate pinning.</li>
+				<li>Fixed cat sticker alignment in chat windows.</li>
+			</ul>
+			In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+		</div>
+		<hr />
+		<div class="newsEntry" id="3.1.22">
+			<h2>sydebar 3.1.22 Release Notes</h2>
+			<p class="newsDate">May 8, 2016</p>
+			sydebar 3.1.22 is now available and brings the following improvements:
+			<ul>
+				<li><em>New feature!</em> Mark which of your buddy's devices
+					you trust, and choose to send messages only to these
+					devices.</li>
+					<li><em>New feature!</em> Messages from your buddies will
+					show which device they were sent from.</li>
+					<li>The Add Buddy, Change Password, Device Manager and
+					Update Downloader windows can now be closed by pressing
+					<span class="code">Ctrl+W</span> in Windows and Linux.
+					Previously, this was only true for Mac (with <span
+					class="code">&#8984;+W</span>).</li>
+					<li>Chat windows will now no longer auto-scroll upon
+					receiving new messages if the user is currently scrolling up
+					to read previous messages.</li>
+					<li>Improved file sharing reliabilty.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.21">
+				<h2>sydebar 3.1.21 Release Notes</h2>
+				<p class="newsDate">May 6, 2016</p>
+				sydebar 3.1.21 is now available and brings the following improvements:
+				<ul>
+					<li>Bug fixes and reliability improvements.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.20">
+				<h2>sydebar 3.1.20 Release Notes</h2>
+				<p class="newsDate">May 5, 2016</p>
+				sydebar 3.1.20 is now available and brings the following improvements:
+				<ul>
+					<li>Fixed a bug that would sometimes fail to decrypt messages received when offline.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.19">
+				<h2>sydebar 3.1.19 Release Notes</h2>
+				<p class="newsDate">May 4, 2016</p>
+				sydebar 3.1.19 is now available and brings the following improvements:
+				<ul>
+					<li>Various minor bug fixes and improvements.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.18">
+				<h2>sydebar 3.1.18 Release Notes</h2>
+				<p class="newsDate">May 3, 2016</p>
+				sydebar 3.1.18 is now available and brings the following improvements:
+				<ul>
+					<li>Fixed a bug that would cause sydebar to consume more network resources than strictly necessary.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.17">
+				<h2>sydebar 3.1.17 Release Notes</h2>
+				<p class="newsDate">May 3, 2016</p>
+				sydebar 3.1.17 is now available and brings the following improvements:
+				<ul>
+					<li>Fixed a rare bug that would sometimes prevent the sydebar window from appearing immediately on launch.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.16">
+				<h2>sydebar 3.1.16 Release Notes</h2>
+				<p class="newsDate">May 3, 2016</p>
+				sydebar 3.1.16 is now available and brings the following improvements:
+				<ul>
+					<li>Improved file sharing performance.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.15">
+				<h2>sydebar 3.1.15 Release Notes</h2>
+				<p class="newsDate">May 2, 2016</p>
+				sydebar 3.1.15 is now available and brings the following improvements:
+				<ul>
+					<li>Various bug fixes.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.14">
+				<h2>sydebar 3.1.14 Release Notes</h2>
+				<p class="newsDate">May 2, 2016</p>
+				sydebar 3.1.14 is now available and brings the following improvements:
+				<ul>
+					<li>Improvements to connection reliability.</li>
+					<li>Small bug fixes and improvements.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.13">
+				<h2>sydebar 3.1.13 Release Notes</h2>
+				<p class="newsDate">May 1, 2016</p>
+				sydebar 3.1.13 is now available and brings the following improvements:
+				<ul>
+					<li><em>New feature!</em> sydebar can now remember your login and login automatically in the future. Only enable this feature on computers you trust, as your login will be saved in the clear in your user profile on your computer.</li>
+					<li>Small improvements.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.12">
+				<h2>sydebar 3.1.12 Release Notes</h2>
+				<p class="newsDate">May 1, 2016</p>
+				sydebar 3.1.12 is now available and brings the following improvements:
+				<ul>
+					<li><em>New feature!</em> Shared video and audio files can now be previewed immediately from within chat windows. Right click to save them to disk.</li>
+					<li><em>New feature!</em> sydebar will now remember the last folder you used for sharing a file or saving shared files and will default to it for future use.</li>
+					<li>Many new file extensions are now allowed in file sharing.</li>	
+					<li>Significant general and connection-specific performance improvements.</li>
+					<li>Fixed a bug where a buddy might appear offline when online.</li>
+					<li>Fixed a bug that would show a notification of a buddy coming online when that buddy was already online.</li>
+					<li>Small improvements and bug fixes.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.11">
+				<h2>sydebar 3.1.11 Release Notes</h2>
+				<p class="newsDate">April 28, 2016</p>
+				sydebar 3.1.11 is now available and brings the following improvements:
+				<ul>
+					<li><em>New feature!</em> Share images more easily: sydebar will now show shared images directly in your chat window, with an option to save them to disk (by right clicking the image) if desired.</li>
+					<li><em>New feature!</em> Audio/video messages can now be saved to disk by right clicking the message and selecting <em>Save to Disk</em>.</li>
+					<li>File sharing: dragging and dropping (or selecting) multiple files and sharing them all at once is now supported.</li>
+					<li>File sharing: many new file types are now supported.</li>
+					<li>Fixed a bug that would remove line breaks from messages, thereby not allowing users to break longer messages into paragraphs, for example.</li>
+					<li>Fixed a bug that made some windows too tall on Linux and Mac.</li>
+					<li>Fixed a bug that made the <em>Change Password</em> window too small on Windows.</li>
+					<li>Small bug fixes and improvements.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.10">
+				<h2>sydebar 3.1.10 Release Notes</h2>
+				<p class="newsDate">April 24, 2016</p>
+				sydebar 3.1.10 is now available and brings the following improvements:
+				<ul>
+					<li>Improved Mac desktop integration.</li>
+					<li>Small bug fixes and improvements.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.09">
+				<h2>sydebar 3.1.09 Release Notes</h2>
+				<p class="newsDate">April 24, 2016</p>
+				sydebar 3.1.09 is now available and brings the following improvements:
+				<ul>
+					<li>Improved reconnection in the event of an unreliable Internet connection.</li>
+					<li>Small bug fixes and improvements.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.08">
+				<h2>sydebar 3.1.08 Release Notes</h2>
+				<p class="newsDate">April 23, 2016</p>
+				sydebar 3.1.08 is now available and brings the following improvements:
+				<ul>
+					<li>Fixed a bug that could prevent Linux and Mac users from signing in.</li>
+					<li>Fixed a bug that could prevent files with uppercase file extensions from being sent correctly.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.07">
+				<h2>sydebar 3.1.07 Release Notes</h2>
+				<p class="newsDate">April 21, 2016</p>
+				sydebar 3.1.07 is now available and brings the following improvements:
+				<ul>
+					<li>Fixed a rare bug that would sometimes show an empty chat window when task-switching into sydebar.</li>
+					<li>Added a right-click context menu to chat messages.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.06">
+				<h2>sydebar 3.1.06 Release Notes</h2>
+				<p class="newsDate">April 21, 2016</p>
+				sydebar 3.1.06 is now available and brings the following improvements:
+				<ul>
+					<li>Improvements to audio/video recording.</li>
+					<li>Fixed a bug introduced in Update 3.1.05 that would prevent users from adding new devices.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.05">
+				<h2>sydebar 3.1.05 Release Notes</h2>
+				<p class="newsDate">April 20, 2016</p>
+				sydebar 3.1.05 is now available and brings the following improvements:
+				<ul>
+					<li>Major improvements to Mac desktop integration and application menus.</li>
+					<li>Fixed a bug that would disallow sharing files with uppercase extension names.</li>
+					<li>Various small improvements and bug fixes.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.04">
+				<h2>sydebar 3.1.04 Release Notes</h2>
+				<p class="newsDate">April 20, 2016</p>
+				sydebar 3.1.04 is now available and brings the following improvements:
+				<ul>
+					<li>Fixed a bug that would prevent selecting and copying message text in chats.</li>
+					<li>When changing passwords, users now have to enter their new password twice in order to prevent typing mistakes.</li>
+					<li>Internal software maintenance changes and improvements.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.03">
+				<h2>sydebar 3.1.03 Release Notes</h2>
+				<p class="newsDate">April 19, 2016</p>
+				sydebar 3.1.03 is now available and brings the following improvements:
+				<ul>
+					<li>Fixed a bug introduced in Update 3.1.02 that would prevent Mac users from copying and pasting in sydebar.</li>
+					<li>The font size control menu for chat windows was moved from the <em>Edit</em> sub-menu to a new <em>View</em> sub-menu.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.02">
+				<h2>sydebar 3.1.02 Release Notes</h2>
+				<p class="newsDate">April 18, 2016</p>
+				sydebar 3.1.02 is now available and brings the following improvements:
+				<ul>
+					<li><em>New feature!</em> <a href="help.html#fontSize">Increase or decrease font size in chats.</a></li>
+					<li>sydebar will now remember the size and position of the buddy list window on your desktop.</li>
+					<li>Cat sticker animations have returned!</li>
+					<li>Various small improvements.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.01">
+				<h2>sydebar 3.1.01 Release Notes</h2>
+				<p class="newsDate">April 18, 2016</p>
+				sydebar 3.1.01 is now available and brings the following improvements:
+				<ul>
+					<li>Fixed a bug that could prevent sydebar from quitting in rare circumstances.</li>
+					<li>Various small improvements and bug fixes.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.1.00">
+				<h2>sydebar 3.1.00 Release Notes</h2>
+				<p class="newsDate">April 17, 2016</p>
+				sydebar 3.1.00 is now available and brings the following improvements:
+				<ul>
+					<li><em>New feature!</em> Send audio/video recordings from your webcam straight to your buddies, encrypted via sydebar.</li>
+					<li>Various small improvements and bug fixes.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.0.31">
+				<h2>sydebar 3.0.31 Release Notes</h2>
+				<p class="newsDate">April 14, 2016</p>
+				sydebar 3.0.31 is now available and brings the following improvements:
+				<ul>
+					<li>Great news! Files transferred over sydebar now have a maximum allowed size of 50MB instead of 25MB. In case your buddy is offline, files you share will also be kept, encrypted, for thirty days (instead of the previous seven days) until your buddy can go online and receive them.</li>
+					<li>Fixed a bug that could prevent logging in for sydebar for Mac users.</li>
+					<li>Added a button to the <em>Update Available</em> dialog that allows users to view what's new in an update.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.0.30">
+				<h2>sydebar 3.0.30 Release Notes</h2>
+				<p class="newsDate">April 13, 2016</p>
+				sydebar 3.0.30 is now available and brings the following improvements:
+				<ul>
+					<li><em><strong>Important!</strong></em> This update is not compatible with buddies using previous versions of sydebar. We understand this isn't great, but given that we are still in a Beta software phase, we find it generally acceptable.</li>
+					<li>Major improvements to chat reliability: "Message could not be decrypted" errors should virtually disappear.</li>
+					<li>Major improvements to connection reliability, especially when reconnecting after an Internet interruption.</li>
+					<li>Small improvements and bug fixes.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.0.29">
+				<h2>sydebar 3.0.29 Release Notes</h2>
+				<p class="newsDate">April 12, 2016</p>
+				sydebar 3.0.29 is now available and brings the following improvements:
+				<ul>
+					<li>Major speed improvements: new chat windows now open much faster.</li>
+					<li>Fixed a bug that could prevent device keys from being deleted reliably.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.0.28">
+				<h2>sydebar 3.0.28 Release Notes</h2>
+				<p class="newsDate">April 12, 2016</p>
+				sydebar 3.0.28 is now available and brings the following improvements:
+				<ul>
+					<li><em>New feature!</em> Drag and drop file sharing: Simply drag and drop a file into a chat window to immediately share it with your buddy. This can be more convenient than manually browsing for the file through the Send File dialog.</li>
+					<li><em>New feature!</em> Major improvements to Linux desktop integration: After the first Launch, the sydebar client will integrate itself into your desktop environment's desktop and menu items.</li>
+					<li><em>New feature!</em> You can now log out from your sydebar account without exiting the client. Admittedly, we are as surprised as you are that this was not implemented sooner.</li>
+					<li><em>New feature!</em> You can now delete your sydebar account. Information on how to accomplish this is present on the <a href="help.html#deleteAccount">Help page</a>.</li>
+					<li>A file's progress bar will now turn green when a file transfer is completed.</li>
+					<li>The following file types are now also supported via file transfer: <span class="code">jpeg</span>, <span class="code">7z</span>, <span class="code">bz2</span>, <span class="code">tar</span>.</li>
+					<li>Fixed a bug that would prevent message notifications from showing.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.0.27">
+				<h2>sydebar 3.0.27 Release Notes</h2>
+				<p class="newsDate">April 9, 2016</p>
+				sydebar 3.0.27 is now available and brings the following improvements:
+				<ul>
+					<li><em><strong>Important!</strong></em> sydebar 3.0.25 and 3.0.26 contain a malfunctioning auto-updater that will not download updates. The only way to update is by re-downloading sydebar from the official website. This version fixes this issue and your auto-updater should work again going forward.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>, unless you are using sydebar 3.025 or 3.0.26.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.0.26">
+				<h2>sydebar 3.0.26 Release Notes</h2>
+				<p class="newsDate">April 9, 2016</p>
+				sydebar 3.0.26 is now available and brings the following improvements:
+				<ul>
+					<li>Chat windows can now be resized more flexibly.</li>
+					<li>Fixed a bug that would delay message scrolling.</li>
+					<li>Fixed a bug that would cause incorrect XMPP error handling.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.0.25">
+				<h2>sydebar, Now with File Sharing</h2>
+				<p class="newsDate">April 8, 2016</p>
+				<p>
+					Good evening from the city that never sleeps. I've been in Manhattan all week, ostensibly on a vacation that nevertheless saw me jumping from coffee shop to coffee shop to get some programming time. I am happy to announce that sydebar now allows you to share files easily and quickly, while chatting with your buddies.
+				</p>
+				<img src="img/3.0.25.png" style="width:auto;height:auto;float:left;margin-right:20px;" alt="" />
+				<p>
+					This is wonderful news. File sharing was sydebar's
+					most-requested feature, with group chat coming in second.
+					Update 3.0.25 allows you to share files of all kinds and up
+					to <span class="strike">25MB</span> <a data-scroll href="#3.0.31">50MB</a> in size. Technically, the file sharing scheme is simple: it piggy-backs on top of the existing authenticated secure messaging session. The file is simply encrypted and authenticated using AES in Galois Counter Mode with a random key, and a pointer to the encrypted blob is sent along with that key as a regular chat message, which gets parsed appropriately by the client as an encrypted file being shared.
+				</p>
+				<p>
+					sydebar is using Microsoft Azure to transmit encrypted
+					files. Azure will be able to determine the size of
+					transmitted files, but neither Azure nor sydebar will be
+					able to determine anything else about the files, be it their
+					content, name, whom you're sending them to, and so on. Files
+					remain available for <span class="strike">seven</span> <a
+					data-scroll href="#3.0.31">thirty</a> days, and a limit of
+					<span class="strike">25MB</span> <a data-scroll href="#3.0.31">50MB</a> per file is
+					imposed in order to save costs: remember that sydebar is a
+					non-profit project! I am footing the Azure bill out of my
+					own pocket; but it's a small price to pay for the
+					satisfaction of writing good software that does something meaningful.
+				</p>
+				<p>
+					To send a file, simply update to sydebar 3.0.25. Then, opening a chat window will show a small blue floppy disk button (pictured.) You may also press <span class="code">Alt+F</span> within the chat window to launch the Send File dialog.
+				</p>
+				<p>
+					Here is the complete change log for Update 3.0.25:
+				</p>
+				<ul>
+					<li><em>New feature!</em> Send files within chats with buddies.</li>
+					<li>Various small improvements to the user interface.</li>
+					<li>Various small bug fixes.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.0.24">
+				<h2>sydebar 3.0.24 Release Notes</h2>
+				<p class="newsDate">April 4, 2016</p>
+				sydebar 3.0.24 is now available and brings the following improvements:
+				<ul>
+					<li><em>New feature!</em> Buddies can now see when you are typing a message to them (and vice-versa). See the <a href="help.html#typing">Help entry</a> on how to enable or disable typing notifications.</li>
+					<li>Various small improvements to the user interface.</li>
+					<li>Improvements to chat reliability.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.0.23">
+				<h2>sydebar 3.0.23 Release Notes</h2>
+				<p class="newsDate">April 2, 2016</p>
+				sydebar 3.0.23 is now available and brings the following improvements:
+				<ul>
+					<li>Improvements to chat reliability.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.0.22">
+				<h2>sydebar 3.0.22 Release Notes</h2>
+				<p class="newsDate">April 1, 2016</p>
+				sydebar 3.0.22 is now available and brings the following improvements:
+				<ul>
+					<li>Improvements to chat reliability.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.0.21">
+				<h2>sydebar 3.0.21 Release Notes</h2>
+				<p class="newsDate">March 31, 2016</p>
+				<p>
+					<em>Note</em>: This update was released as Update 3.0.20 but was superceded by Update 3.0.21 due to Update 3.0.20 breaking backwards compatibility with previous versions.
+				</p>
+				sydebar 3.0.21 is now available and brings the following improvements:
+				<ul>
+					<li>Improvements to chat reliability.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.0.19">
+				<h2>sydebar 3.0.19 Release Notes</h2>
+				<p class="newsDate">March 31, 2016</p>
+				sydebar 3.0.19 is now available and brings the following improvements:
+				<ul>
+					<li><em>New feature!</em> Sort through your buddy list with a handy filtering feature, now available at the top of your sydebar buddy list window.</li>
+					<li>Fixed a common bug that occured on sydebar for Mac which would show a confusing error message and prevent the buddy list from ever opening again until the application was restarted.</li>
+					<li>Fixed a bug that occured on sydebar for Mac which would prevent certain dialogs from closing when prompted to.</li>
+					<li>Buddies are now sorted alphabetically as well as by status.</li>
+					<li>General reliability improvements.</li>
+				</ul>
+				In order to obtain the update, open the <em>Help</em> menu and click on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.0.18">
+				<h2>sydebar 3.0.18 Release Notes</h2>
+				<p class="newsDate">March 30, 2016</p>
+				sydebar 3.0.18 is now available and brings the following improvements:
+				<ul>
+				<li>General improvements to the reliability of the chatting experience.</li>
+					<li>General improvements to buddy request handling.</li>
+					<li>Added a "Check for Updates" option to the Help menu.</li>
+				</ul>
+				In order to obtain the update, simply restart sydebar. You will be prompted to download the installer. Starting from this version, you will also be able to check for updates by opening the <em>Help</em> menu and clicking on <em>Check for Updates</em>.
+			</div>
+			<hr />
+			<div class="newsEntry" id="3.0.16">
+				<h2>sydebar: Beta Release</h2>
+				<p class="newsDate">March 29, 2016</p>
+				<em>Update</em>: sydebar 3.0.17 has been released with the following improvements:
+				<ul>
+					<li>Sticker animations have been disabled due to their high CPU cost on some computers.</li>
+					<li>A bug that prevented the "Help" menu from working from inside chat windows on Windows and Linux was resolved.</li>
+				</ul>
+				<p>
+					I was going to write a longer release annoucement, but I think the software and the nice new website can speak for themselves!
+				</p>
+				<p>
+					Please enjoy the Beta release and report any bugs you find. It's my great privilege to bring sydebar back on track and I'm happy to see how users will find the release.
+				</p>
+				<p>
+					I will be spending the next two weeks in New York City. If you're on the other side of the Atlantic and want to discuss the new software, get in touch either via <a href="https://twitter.com/kaepora" target="_blank">Twitter</a> or <a href="mailto:nadim@nadim.computer">email.</a>
+				</p>
+				<p><em>&mdash; Nadim</em></p>
+			</div>
+		</div>
+	</div>
+
+	<div id="bottom">
+		<div class="bottomLeft">
+			<a href="https://twitter.com/sydebarapp">Follow sydebar on Twitter</a><br />
+			English - <a href="fr.html">Français</a> - <a href="ca.html">Català</a>
+		</div>
+		<div class="bottomRight">
+			"sydebar" and the sydebar logo are registered trademarks.<br />
+			Copyright © 2018 Nadim Kobeissi, all rights reserved.
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="
+		user-scalable=no, initial-scale=1,
+		maximum-scale=1, minimum-scale=1,
+		width=device-width, height=device-height,
+		target-densitydpi=device-dpi"
+	/>
+	<meta name="keywords" content="sydebar, private chat, private im, secure im, secure chat,
+		encrypted chat, encrypted im, open source encrypted chat, crypto cat" />
+	<meta name="description" content="Chat easily and securely with your buddies using sydebar." />
+	<title>sydebar - Security</title>
+	<link rel="stylesheet" href="css/fonts.css" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="icon" type="image/png" href="img/logo.png" />
+	<link rel="image_src" href="https://crypto.cat/img/logo.png" />
+	<script type="application/javascript" src="js/smooth-scroll.js"></script>
+	<script type="application/javascript" src="js/util.js"></script>
+	<script type="application/javascript">
+		window.addEventListener('load', function() {
+			smoothScroll.init();
+		});
+	</script>
+</head>
+<body>
+	<div id="top">
+		<img class="logo" src="img/logo.png" alt="" draggable="false" />
+		<div class="nav">
+			<a href="index.html">Home</a>
+			<a href="news.html">News</a>
+			<a href="mission.html">Mission</a>
+			<a href="#" class="current">Security</a>
+			<a href="help.html">Help</a>
+			<a href="stickers">Stickers</a>
+			<a href="https://github.com/sydebar/sydebar">Code</a>
+		</div>
+	</div>
+	
+	<div id="main">
+		<div class="mainCenter">
+			<h1>Security</h1>
+			<div class="tableOfContents">
+				<ul>
+					<li><a data-scroll href="#encryption">Encryption Overview</a></li>
+					<li><a data-scroll href="#authentication">Authentication Overview</a></li>
+					<li><a data-scroll href="#filesharing">File Sharing</a></li>
+					<li><a data-scroll href="#misc">Miscellaneous Security Features</a></li>
+					<li><a data-scroll href="#fulldisclosure">Reporting Security Issues</a></li>
+					<li><a data-scroll href="#bugbounty">Bug Bounty Program</a></li>
+				</ul>
+			</div>
+			<h2 id="encryption">Encryption Overview</h2>
+			<p>
+				sydebar uses a Double Ratchet-based encryption protocol that combines a forward-secure ratchet with a zero round-trip authenticated key exchange. As a transport layer for encrypted messages, sydebar adopts the <a href="https://conversations.im/xeps/multi-end.html" target="_blank">OMEMO Multi-End Message and Object Encryption</a> standard, which also gives sydebar multi-device support and allows for offline messaging. In terms of the transport layer, sydebar uses XMPP over a long-standing, TLS-encrypted WebSockets connection.
+			</p>
+			<p>
+				Every sydebar device owns a long-term <span
+				class="code">identityKey</span> pair which helps with the establishment of the initial authenticated key exchange. This key pair also serves to sign the device's <span class="code">signedPreKey</span>, an ephemeral public key that also is mixed into the authenticated key exchange. The <span class="code">signedPreKey</span> is also shipped with 100, unsigned, one-time-use <span class="code">preKey</span>s, and is regenerated and re-signed every week. 
+			</p>
+			<p>
+				Suppose Alice wanted to start a new session with Bob. Alice would then fetch Bob's current <span class="code">signedPreKey</span> and his list of 100 <span class="code">preKey</span>s from the sydebar network. Alice would then select a random <span class="code">preKey</span> from the list. Alice then generates her own <span class="code">initKey</span> pair, which is a keypair used only for the purposes of initializing a new session. Alice then performs the following computation in order to obtain the initial session secret <span class="code">S</span>:
+
+<code>S = SHA256(
+	X25519(AliceIdentityKey, BobSignedPreKey) ||
+	X25519(AliceInitKey, BobIdentityKey)      ||
+	X25519(AliceInitKey, BobSignedPreKey)     ||
+	X25519(AliceInitKey, BobPreKey)
+)
+(
+	AliceReceivingRootKey,
+	AliceReceivingChainKey
+) = HKDF(S, Constant1, Constant2)</code>
+
+			</p>
+			<p>
+				Between messages, sydebar maintains a forward-secure ratcheting chain that creates a new ephemeral key pair for each message, and derives their chain of authenticity by mixing in a chain going back to <span class="code">S</span> via a Hash-Based Key Derivation Function (HKDF). Here is an example occuring later in the conversation, after Bob had also derived a <span class="code">BobMessageEphemeralKey</span> and other session state elements:
+				
+<code>AliceMessageEphemeralKey = X25519_NewKeyPair()
+AliceSharedKey = X25519(
+	AliceMessageEphemeralKey,
+	BobMessageEphemeralKey
+)
+(
+	AliceSendingRootKey,
+	AliceSendingChainKey
+) = HKDF(S, AliceReceivingRootKey, Constant2)
+AliceMessageEncryptionKey = HKDF(
+	HMAC(AliceSendingChainKey, Constant3),
+	Constant1,
+	Constant4
+)
+(
+	AliceEncryptedMessage,
+	AliceEncryptedMessageTag
+) = AESGCM256(
+	Key:AliceMessageEncryptionKey,
+	Plaintext:AliceMessagePlaintext,
+	AddedData:(
+		AliceMessageEphemeralKeyPublic ||
+		BobMessageEphemeralKeyPublic   ||
+		AliceIdentityKeyPublic         ||
+		BobIdentityKeyPublic
+	)
+)</code>
+				Alice then sends <span class="code">(AliceMessageEphemeralKeyPublic, AliceEncryptedMessage, AliceEncryptedMessageTag)</span>.
+				<span class="code">Constant1</span>, <span class="code">Constant2</span> and <span class="code">Constant3</span> are some publicly known constant strings coded into the protocol implementation.
+			</p>
+			<h3>Primitives</h3>
+			<ul>
+				<li><span class="code">AES</span> is used in Galois Counter Mode (GCM) for authenticated symmetric encryption with added data.</li>
+				<li><span class="code">X25519</span> is used for all Elliptic-Curve Diffie-Hellman (ECDH) operations. A four-way ECDH handshake is used for the initial authenticated key exchange and further ECDH operations are routinely performed for <span class="code">preKey</span> generation and message ratcheting.</li>
+				<li><span class="code">ED25519</span> is used for generating the
+				<span class="code">identityKey</span> pair and for signing and verifying the <span class="code">signedPreKey</span>, but is otherwise unused throughout the protocol.</li>
+				<li><span class="code">SHA256</span> is used as the standard hashing function and as the underlying hash function for the HKDF.</li>
+			</ul>
+			<h3>Threat Model</h3>
+			<p>sydebar makes the following assumptions:</p>
+			<ul>
+				<li><em>Untrusted network</em>: We assume that an attacker controls the network and so can intercept, tamper with and inject network messages.</li>
+				<li><em>Long-term key compromise</em>: We assume that an
+				attacker may at some point compromise the long-term <span
+				class="code">identityKey</span> pair of a participant.</li>
+			</ul>
+			<h3>Security Goals</h3>
+			<p>Given our threat model, sydebar aims to accomplish the following security goals:</p>
+			<ul>
+				<li><em>Secrecy</em>: A message sent between buddies can only be decrypted between these buddies.</li>
+				<li><em>Authenticity</em>: If Alice receive an apparently valid message from Bob, then Bob must have sent this message to Alice.</li>
+				<li><em>Indistinguishability</em>: If Alice randomly chooses between two messages of the same size and sends only one to Bob, an attacker cannot determine which message was sent.</li>
+				<li><em>Forward secrecy</em>: If Alice sends a message to Bob and Alice's key state at the time of this message is subsequently compromised, all previous messages retain their Secrecy property.</li>
+				<li><em>Future secrecy</em>: If Alice sends a first message to Bob, receives a reply from Bob, and then sends a second message to Bob, Alice's second message remains secret even if her key state for the first message is compromised.</li>
+			</ul>
+			<hr />
+			<h2 id="authentication">Authentication Overview</h2>
+			<p>
+				sydebar offers users the ability to <a
+				href="help.html#fingerprints">verify the authenticity of
+				their buddies' devices</a>. In that way, they can ensure that a
+				malicious party (including, potentially, the sydebar network
+				itself) is not masquerading as the device of another individual.
+				Device fingeprints are calculated thus:
+			</p>
+
+<code>DeviceFingerprint = SHA256(
+	deviceId                ||
+	SHA256(
+		username   ||
+		deviceName ||
+		deviceIcon
+	)                       ||
+	deviceIdentityKeyPublic
+).HexString().First32Characters()</code>
+
+			<p>
+				In the above example, <span class="code">deviceId</span> is a
+				random 32-byte device identifier that is generated upon device
+				registration and that never changes. <span
+				class="code">deviceName</span> is a name that the user assigns
+				to the device that also cannot be later modified. <span
+				class="code">deviceIcon</span> is one of three icons (<span
+				class="code">0</span>, representing a laptop, <span
+				class="code">1</span>, representing an all-in-one desktop and
+				<span class="code">2</span>, representing a PC) and also cannot
+				be modified.
+			</p>
+			<hr />
+			<h2 id="filesharing">File Sharing</h2>
+			<p>
+				sydebar software provides users with the ability to <a
+				href="help.html#files">share documents, video recordings, photos
+				and other such media</a>. These are all threated as the same type of plaintext (a "file") and are all handled as follows:
+			</p>
+			<ul>
+				<li>A 256-bit <span class="code">AES-GCM</span> <span class="code">fileKey</span> is randomly chosen and used to symmetrically encrypt the file.</li>
+				<li>The encrypted file is then uploaded to a sydebar server where it is stored for 30 days. The sydebar server obtains the encrypted file and is able to determine its size, but is nevertheless not able to determine anything else about the file, including its type or file name.</li>
+				<li>The sender then sends the <span class="code">fileKey</span> and its corresponding <span class="code">AES-GCM</span> <span class="code">fileNonce</span>, <span class="code">fileTag</span> to the recipient along with a <span class="code">fileUrl</span> pointer to where the encrypted file can be fetched from the sydebar network and a <span class="code">fileName</span> value indicating the name of the file. This information is communicated a specially formatted, but nevertheless regularly encrypted sydebar chat message.</li>
+				<li>The recipient's client parses the chat message as one that is pointing to a file, downloads the ciphertext from <span class="code">fileUrl</span>, decrypts it with <span class="code">fileKey</span> and <span class="code">fileNonce</span> and authenticates it with <span class="code">fileTag</span>.</li>
+				<li>If decryption and authentication are successful, the file is presented to the recipient for viewing or download, depending on what is appropriate for the file type.</li>
+			</ul>
+			<p>Note that <span class="code">fileUrl</span> cannot be just any HTTP URI but is specially restricted for the purposes of sydebar file sharing.</p>
+			<hr />
+			<h2 id="misc">Miscellaneous Security Features</h2>
+			<p>Aside of the message encryption protocol, sydebar adopts the following security features in order to provide a generally more robust experience across the client:</p>
+			<ul>
+				<li><em>Authenticated installers</em>: sydebar client installation packages are authenticated using Authenticode on Windows, <span class="code">gpg2</span> on Linux and Apple code signing on Mac.</li>
+				<li><em>Signed updates</em>: In addition to installer authentication, sydebar's built-in update downloader will run an independent signature verification on all downloads.</li>
+				<li><em>Certificate pinning</em>: sydebar will check for a "known-good" TLS certificate before initiating a connection to the sydebar XMPP server.</li>
+				<li><em>Device management</em>: Users are given the option of independently verifying their buddies' device lists and are notified when a buddy's device list is modified.</li>
+			</ul>
+			<hr />
+			<h2 id="fulldisclosure">Reporting Security Issues</h2>
+			<p><em>Note</em>: a <a data-scroll href="#bugbounty">Bug Bounty Program</a> is currently in effect.</p>
+			<p>
+				sydebar is written with security in mind and uses state-of-the-art cryptography engineering to protect your privacy. However, in the event that a security vulnerability is discovered, the project operates under the principle of full disclosure. If you discover a critical security issue with sydebar software, <strong>report it</strong>. You will be helping safeguard the privacy of thousands of people. Depending on the severity of the issue, here is how we recommend you report your findings:
+			</p>
+			<ul>
+				<li><em>Critical or High Severity</em>: Send a message to <span class="code">nadim</span> on sydebar at least one week before publishing your findings. You retain full right (and our explicit support) to publish your findings, but we ask for a window to push a fix to our users beforehand.</li>
+				<li><em>Medium or Low Severity</em>: Open a ticket on the <a href="https://github.com/sydebar/sydebar">GitHub issue tracker</a> documenting the issue.</li>
+			</ul>
+			<!--
+			<p>
+				While sydebar is unable to provide a "bug bounty" or any sort of reward for disclosing vulnerabilities, we strongly encourage you to follow the spirit of open research: it helps improve the software, it helps make digital privacy stronger for our users, and it might net you something to write about.
+			</p>
+			-->
+			<hr />
+			<h2 id="bugbounty">Bug Bounty Program</h2>
+			<p>
+				From December 20, 2016 and until December 31, 2017, sydebar is holding a Bug Bounty Program. The goal of this program is to invite independent analysis of sydebar's security, especially since its complete rewrite which was completed in April 2016.
+			</p>
+			<h3>Bug Bountry Program Prize</h3>
+			<ol>
+				<li>$500 USD delivered via PayPal.</li>
+				<li>A good book from Amazon.com chosen by us.</li>
+				<li>Recognition on the sydebar website.</li>
+				<li>A personal thank-you note.</li>
+			</ol>
+			<p>
+				Due to sydebar's limited funding as volunteer-run software, the bounty is held in a "contest" style: the first person to report a vulnerability will receive the prize, and the Bug Bounty Program will then be closed until further notice. Should we receive more than one bounty report simultaneously, we will award the prize to the report we judge to be more important.
+			</p>
+			<p>
+				<span class="doubleUnderline">However</span>: Should you win the Bug Bounty Program prize but forfeit the $500 USD prize money, the Bug Bounty Program will <span class="doubleUnderline">remain open</span> for a second potential winner, and you will still receive the other three elements of the prize.
+			</p>
+			<h3>Bug Bounty Program Criteria</h3>
+			<h4>Logistics</h4>
+			<ol>
+				<li>Your report must be submitted before December 31, 2017 (anywhere on Earth).</li>
+				<li>A proof-of-concept must be included.</li>
+				<li>You must be agree with full public disclosure of the bug you have discovered. You may choose to forfeit public credit.</li>
+			</ol>
+			<h4>Bug Eligibility</h4>
+			<p>
+				Your reported vulnerability must be, within reasonable judgement, a high-to-critical severity vulnerability. For example, it must allow remote account compromise, user or device impersonation, message decryption, arbirtrary code execution, or something along these lines. A simple denial of service, to give a counter-example, or a bug that is reliant on pre-existing control of the victim's device, is not eligible. We promise to be fair regarding the severity of your reported bug.
+			</p>
+			<p>
+				Any submitted report must involve a bug that is exploitable in the latest version of sydebar at the time of submission.
+			</p>
+			<h3>Bug Bounty Program Report Submission</h3>
+			<p>
+				Simply send a sydebar message to <span class="code">nadim</span> on sydebar in order to submit your report. It's the personal account of the person responsible for writing the software.
+			</p>
+			<p>
+				Thank you for helping make sydebar safer for everyone. Good luck!
+			</p>
+		</div>
+	</div>
+
+	<div id="bottom">
+		<div class="bottomLeft">
+			<a href="https://twitter.com/sydebarapp">Follow sydebar on Twitter</a><br />	
+			English - <a href="fr.html">Français</a> - <a href="ca.html">Català</a>
+		</div>
+		<div class="bottomRight">
+			"sydebar" and the sydebar logo are registered trademarks.<br />
+			Copyright © 2018 Nadim Kobeissi, all rights reserved.
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="
+		user-scalable=no, initial-scale=1,
+		maximum-scale=1, minimum-scale=1,
+		width=device-width, height=device-height,
+		target-densitydpi=device-dpi"
+	/>
+	<title>sydebar</title>
+	<link rel="stylesheet" href="css/fonts.css" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="stylesheet" href="css/octicons.css" type="text/css" />
+	<link rel="icon" type="image/png" href="img/logo.png" />
+	<link rel="image_src" href="https://crypto.cat/img/logo.png" />
+	<script type="application/javascript" src="js/smooth-scroll.js"></script>
+	<script type="application/javascript" src="js/util.js"></script>
+	<script type="application/javascript">
+		window.addEventListener('load', function() {
+			'use strict';
+			var dBF = document.getElementById('downloadButtonForm');
+			var dBT = document.getElementById('downloadButtonText');
+			var dL  = {
+				win32:  'https://download.crypto.cat/client/sydebar-win32-x64.zip',
+				linux:  'https://download.crypto.cat/client/sydebar-linux-x64.zip',
+				darwin: 'https://download.crypto.cat/client/sydebar-darwin-x64.zip'
+			};
+			var dT  = {
+				win32:  'Descarregar sydebar per a Windows',
+				linux:  'Descarregar sydebar per a Linux',
+				darwin: 'Descarregar sydebar per a Mac'
+			};
+			dBF.action    = dL[getOS()];
+			dBT.innerText = dT[getOS()];
+		});
+	</script>
+</head>
+<body>
+	<div id="top">
+		<img class="logo" src="img/logo.png" alt="" draggable="false" />
+		<div class="nav">
+			<a href="#" class="current">Home</a>
+			<a href="news.html">News</a>
+			<a href="mission.html">Mission</a>
+			<a href="security.html">Security</a>
+			<a href="help.html">Help</a>
+			<a href="stickers">Stickers</a>
+			<a href="https://github.com/sydebar/sydebar">Code</a>
+		</div>
+	</div>
+	<div id="main">
+		<div class="mainLeft">
+			<img class="mainLeftSplash" src="img/3.2.07.png" alt="Chat with nadim" title="sydebar on macOS." draggable="false" />
+		</div>
+		<div class="mainRight">
+			<h1>Xatejar en securidad.</h1>
+			<p>
+				sydebar és programari lliure amb una simple missió: tothom hauria de ser capaç de xerrar amb els seus amics en la intimitat.
+			</p>
+			<ul class="mainFeatureList">
+				<li>
+					<em>Xifrat per defecte.</em> Cada missatge té un xifrat, sempre.
+				</li>
+				<li>
+					<em>Endavant segur.</em> Xats no es pot desxifrar fins i tot si les claus són robats.
+				</li>
+				<li>
+					<em>Intercanvi d'arxius.</em> Compartir arxius de forma segura amb amics.
+				</li>
+			</ul>
+			<form id="downloadButtonForm" action="https://download.crypto.cat/client/sydebar-win32-x64.zip">
+				<button id="downloadButton">
+					<span class="mega-octicon octicon-cloud-download"></span>
+					<span id="downloadButtonText">Descarregar sydebar per a Windows</span>
+				</button>
+			</form>
+			<span class="downloadLinks">
+				Available for <a href="https://download.crypto.cat/client/sydebar-win32-x64.zip">Windows</a>, 
+				<a href="https://download.crypto.cat/client/sydebar-linux-x64.zip">Linux</a> and 
+				<a href="https://download.crypto.cat/client/sydebar-darwin-x64.zip">Mac</a>.
+			</span>
+		</div>
+	</div>
+
+	<div id="bottom">
+		<div class="bottomLeft">
+			<a href="https://twitter.com/sydebarapp">Seguiu sydebar a Twitter</a><br />
+			<a href="index.html">English</a> - <a href="fr.html">Français</a> - Català
+		</div>
+		<div class="bottomRight">
+			"sydebar" i el logotip són marques registrades sydebar.<br />
+			Copyright © 2018 Nadim Kobeissi, tots els drets reservats.
+		</div>
+	</div>
+</body>
+</html>
