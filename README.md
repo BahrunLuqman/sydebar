@@ -1,9 +1,3 @@
-![sydebar](https://raw.githubusercontent.com/sydebar/sydebar/master/src/img/logo/64x64.png)
-
-[![Build Status](https://travis-ci.org/sydebar/sydebar.svg?branch=master)](https://travis-ci.org/sydebar/sydebar)
-
-[Documentation](https://crypto.cat/help.html) | [Security](https://crypto.cat/security.html) | [License](http://www.gnu.org/licenses/gpl-3.0.en.html)
-
 ### Building
 Install dependencies:
 ```
