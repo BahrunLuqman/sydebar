@@ -106,7 +106,7 @@ window.addEventListener('load', function(e) {
 				label: 'Get Stickers',
 				click: function() {
 					Remote.shell.openExternal(
-						'https://crypto.cat/stickers'
+						'https://sydebar.io/stickers'
 					);
 				}
 			}, {

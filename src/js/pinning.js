@@ -3,9 +3,9 @@ sydebar.Pinning = {};
 
 (function() {
 	var domains = {
-		'crypto.cat': [{
+		'sydebar.io': [{
 			issuer: 'Gandi Standard SSL CA 2',
-			subject: 'crypto.cat',
+			subject: 'sydebar.io',
 			exponent: '0x10001',
 			modulus: (
 				'C4B6B422A47FB1902A7436FA90AC7B17B4D88DB595CCBA5C3EF8FAE09D0EBB4D' +
@@ -19,7 +19,7 @@ sydebar.Pinning = {};
 			)
 		}, {
 			issuer: 'Gandi Standard SSL CA 2',
-			subject: 'crypto.cat',
+			subject: 'sydebar.io',
 			exponent: '0x10001',
 			modulus: (
 				'C4B6B422A47FB1902A7436FA90AC7B17B4D88DB595CCBA5C3EF8FAE09D0EBB4D' +
@@ -32,9 +32,9 @@ sydebar.Pinning = {};
 				'608C0BDCAB23185704B97892FBE19910C88CCCD510E13150648B6174BF309FD5'
 			)
 		}],
-		'download.crypto.cat': [{
+		'download.sydebar.io': [{
 			issuer: 'Gandi Standard SSL CA 2',
-			subject: 'download.crypto.cat',
+			subject: 'download.sydebar.io',
 			exponent: '0x10001',
 			modulus: (
 				'BC279AA8BE72EB431611494DE722C5AC267F7027D5750DD2A60CA4F50E74830B' +
@@ -52,7 +52,7 @@ sydebar.Pinning = {};
 			)
 		}, {
 			issuer: 'Let\'s Encrypt Authority X3',
-			subject: 'download.crypto.cat',
+			subject: 'download.sydebar.io',
 			exponent: '0x10001',
 			modulus: (
 				'BB34D8E4E4CC874EB84E61259788AC54CD7BEA3196E5C2872DA80F2FCFC4E6B6' +
@@ -80,9 +80,9 @@ sydebar.Pinning = {};
 	};
 
 	sydebar.Pinning.get = function(url, callback) {
-		var domain = domains['crypto.cat'];
-		if (url.startsWith('https://download.crypto.cat/')) {
-			domain = domains['download.crypto.cat'];
+		var domain = domains['sydebar.io'];
+		if (url.startsWith('https://download.sydebar.io/')) {
+			domain = domains['download.sydebar.io'];
 		}
 		var candidate = {};
 		var get = HTTPS.request({

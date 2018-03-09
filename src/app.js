@@ -135,7 +135,7 @@ const buildTrayMenu = function(settings) {
 		}, {
 			label: 'Help',
 			click: function() {
-				Electron.shell.openExternal('https://crypto.cat/help.html');
+				Electron.shell.openExternal('https://sydebar.io/help.html');
 			}
 		}, {
 			role: 'quit',
@@ -282,7 +282,7 @@ const buildMainMenu = function(settings) {
 					label: 'Getting Started',
 					click: function() {
 						Electron.shell.openExternal(
-							'https://crypto.cat/help.html'
+							'https://sydebar.io/help.html'
 						);
 					}
 				}, {
@@ -303,7 +303,7 @@ const buildMainMenu = function(settings) {
 					label: 'Get Stickers',
 					click: function() {
 						Electron.shell.openExternal(
-							'https://crypto.cat/stickers'
+							'https://sydebar.io/stickers'
 						);
 					}
 				}, {

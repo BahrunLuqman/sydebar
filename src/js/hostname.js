@@ -1,2 +1,2 @@
 'use strict';
-sydebar.Hostname = 'crypto.cat';
+sydebar.Hostname = 'sydebar.io';
